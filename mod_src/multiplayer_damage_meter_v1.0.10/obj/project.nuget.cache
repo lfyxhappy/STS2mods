@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZKosEI+13ow=",
+  "success": true,
+  "projectFilePath": "C:\\算法\\小应用\\Slay the Spire 2\\mod_src\\multiplayer_damage_meter_v1.0.10\\multiplayer_damage_meter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\liangfeng\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.9\\microsoft.netcore.app.ref.9.0.9.nupkg.sha512",
+    "C:\\Users\\liangfeng\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.9\\microsoft.windowsdesktop.app.ref.9.0.9.nupkg.sha512",
+    "C:\\Users\\liangfeng\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.9\\microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

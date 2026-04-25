@@ -1,0 +1,10 @@
+{
+  "id": "multiplayer_damage_meter",
+  "name": "多人伤害统计",
+  "author": "Codex",
+  "description": "多人模式伤害统计，计入被格挡伤害。",
+  "version": "1.0.11",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": false
+}

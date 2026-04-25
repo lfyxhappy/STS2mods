@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "multiplayer_damage_meter/1.0.11": {
+        "runtime": {
+          "multiplayer_damage_meter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "multiplayer_damage_meter/1.0.11": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

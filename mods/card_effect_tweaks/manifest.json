@@ -1,0 +1,10 @@
+{
+  "id": "card_effect_tweaks",
+  "name": "Card Effect Tweaks",
+  "author": "Codex",
+  "description": "Framework for standalone card effect Harmony patches. The initial build ships no active card changes.",
+  "version": "0.1.0",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": true
+}
