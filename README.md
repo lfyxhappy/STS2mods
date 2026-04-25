@@ -23,6 +23,18 @@
 - HUD 中分开显示“之前战斗”的累计伤害和“本场战斗”的当前伤害。
 - 如果在战斗中 save/load，本场战斗伤害会重置为 `0`，避免当前战斗伤害被重复计算。
 
+### 暂停菜单重打
+
+- 安装目录：`mods/pause_menu_rerun`
+- 源码目录：`mod_src/pause_menu_rerun`
+- 当前版本：`v1.0`
+
+功能说明：
+
+- 在单人模式暂停菜单中添加绿色的“重打”按钮。
+- 按钮会先执行游戏原本的“保存并退出”，回到主菜单后自动执行原本的“继续游戏”。
+- 仅在单人模式显示，避免影响多人同步流程。
+
 ### Card Effect Tweaks
 
 - 安装目录：`mods/card_effect_tweaks`
@@ -35,7 +47,7 @@
 推荐使用 Release 里的压缩包安装：
 
 1. 打开本仓库的 GitHub Release 页面。
-2. 下载 `STS2mods-v1.0.11.zip`。
+2. 下载 `STS2mods-v1.0.12.zip`。
 3. 解压压缩包。
 4. 把解压出来的 `mods` 文件夹复制到《杀戮尖塔 2》的游戏目录下。
 
@@ -50,6 +62,9 @@ Slay the Spire 2/
     card_effect_tweaks/
       manifest.json
       card_effect_tweaks.dll
+    pause_menu_rerun/
+      manifest.json
+      pause_menu_rerun.dll
 ```
 
 如果你是直接 clone 本仓库，也可以直接把仓库里的 `mods/` 文件夹复制到游戏目录。
@@ -69,6 +84,13 @@ dotnet build -c Release --no-restore
 
 ```powershell
 cd "mod_src\card_effect_tweaks"
+dotnet build -c Release --no-restore
+```
+
+编译 `pause_menu_rerun`：
+
+```powershell
+cd "mod_src\pause_menu_rerun"
 dotnet build -c Release --no-restore
 ```
 

@@ -1,0 +1,10 @@
+{
+  "id": "pause_menu_rerun",
+  "name": "Pause Menu Rerun",
+  "author": "Codex",
+  "description": "Adds a green singleplayer pause-menu rerun button that saves, returns to the main menu, and immediately continues the saved run.",
+  "version": "v1.0",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": false
+}
