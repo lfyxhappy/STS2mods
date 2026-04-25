@@ -1,33 +1,45 @@
 # STS2mods
 
-Slay the Spire 2 mod collection by lfyxhappy.
+这是 lfyxhappy 的《杀戮尖塔 2》（Slay the Spire 2）Mod 集合仓库。
 
-This repository contains ready-to-use mod builds in `mods/` and matching C# source projects in `mod_src/`.
+仓库里包含两个部分：
 
-## Included Mods
+- `mods/`：已经编译好的 Mod，可以直接复制到游戏目录使用。
+- `mod_src/`：对应的 C# 源码工程，方便查看、修改和重新编译。
 
-### Multiplayer Damage Meter
+## 已包含的 Mod
 
-- Folder: `mods/multiplayer_damage_meter_v1.0.11`
-- Source: `mod_src/multiplayer_damage_meter_v1.0.10`
-- Version: `1.0.11`
-- Adds a multiplayer damage HUD and combat-end summary.
-- Counts blocked damage and normal damage.
-- Separates previous-combat total damage from current-combat damage.
-- After save/load during an active combat, current-combat damage is reset to `0` to avoid duplicate counting.
+### 多人伤害统计
+
+- 安装目录：`mods/multiplayer_damage_meter_v1.0.11`
+- 源码目录：`mod_src/multiplayer_damage_meter_v1.0.10`
+- 当前版本：`1.0.11`
+
+功能说明：
+
+- 在多人模式中显示每名玩家的伤害统计。
+- 统计普通伤害和被格挡伤害。
+- 战斗结束后显示本场战斗伤害摘要。
+- HUD 中分开显示“之前战斗”的累计伤害和“本场战斗”的当前伤害。
+- 如果在战斗中 save/load，本场战斗伤害会重置为 `0`，避免当前战斗伤害被重复计算。
 
 ### Card Effect Tweaks
 
-- Folder: `mods/card_effect_tweaks`
-- Source: `mod_src/card_effect_tweaks`
-- Standalone C# Harmony mod scaffold for card/effect tweaks.
+- 安装目录：`mods/card_effect_tweaks`
+- 源码目录：`mod_src/card_effect_tweaks`
 
-## Installation
+这是一个独立的 C# Harmony Mod 模板/脚手架，用来后续编写卡牌或效果调整类 Mod。
 
-1. Download `STS2mods-v1.0.11.zip` from the latest GitHub Release.
-2. Extract the archive.
-3. Copy the extracted `mods` folder into your Slay the Spire 2 game folder.
-4. The final structure should look like this:
+## 安装方式
+
+推荐使用 Release 里的压缩包安装：
+
+1. 打开本仓库的 GitHub Release 页面。
+2. 下载 `STS2mods-v1.0.11.zip`。
+3. 解压压缩包。
+4. 把解压出来的 `mods` 文件夹复制到《杀戮尖塔 2》的游戏目录下。
+
+最终目录结构应类似这样：
 
 ```text
 Slay the Spire 2/
@@ -40,36 +52,44 @@ Slay the Spire 2/
       card_effect_tweaks.dll
 ```
 
-If you clone this repository instead of using the Release zip, copy the repository's `mods/` folder into the game folder.
+如果你是直接 clone 本仓库，也可以直接把仓库里的 `mods/` 文件夹复制到游戏目录。
 
-## Build From Source
+## 从源码编译
 
-The source projects target `.NET 9.0` and reference the Slay the Spire 2 runtime DLLs from the game folder.
+源码工程使用 `.NET 9.0`，并引用《杀戮尖塔 2》游戏目录中的运行时 DLL。
 
-Build the multiplayer damage meter:
+编译“多人伤害统计”：
 
 ```powershell
 cd "mod_src\multiplayer_damage_meter_v1.0.10"
 dotnet build -c Release --no-restore
 ```
 
-Build card effect tweaks:
+编译 `card_effect_tweaks`：
 
 ```powershell
 cd "mod_src\card_effect_tweaks"
 dotnet build -c Release --no-restore
 ```
 
-After building, copy the generated DLL from `bin\Release\netcoreapp9.0\` into the matching folder under `mods/`.
+编译完成后，把生成的 DLL 从：
 
-## Save Progress Sync
+```text
+bin\Release\netcoreapp9.0\
+```
 
-For syncing Slay the Spire 2 save progress across machines, see my related tool:
+复制到 `mods/` 下对应的 Mod 文件夹里。
+
+## 存档进度同步
+
+如果你需要在多台电脑之间同步《杀戮尖塔 2》的存档进度，可以使用我的另一个工具：
 
 [STS2-Save-Sync-Tool](https://github.com/lfyxhappy/STS2-Save-Sync-Tool)
 
-## Notes
+这个工具用于同步存档进度，和本仓库里的 Mod 可以配合使用。
 
-- These mods are for Slay the Spire 2.
-- Keep mod folder names and `manifest.json` versions aligned when releasing updates.
-- The `mod_src/` folder is included for transparency and further modification.
+## 注意事项
+
+- 本仓库内容面向《杀戮尖塔 2》。
+- 发布新版本时，应同步更新 Mod 文件夹名、`manifest.json` 版本号、源码版本号和 Release tag。
+- `mod_src/` 中包含源码和部分构建产物，主要用于记录当前可用版本的完整状态。
