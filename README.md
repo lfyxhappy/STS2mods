@@ -35,6 +35,20 @@
 - 按钮会先执行游戏原本的“保存并退出”，回到主菜单后自动执行原本的“继续游戏”。
 - 仅在单人模式显示，避免影响多人同步流程。
 
+### 游戏速度调节
+
+- 安装目录：`mods/game_speed_control`
+- 源码目录：`mod_src/game_speed_control`
+- 当前版本：`1.0.0`
+
+功能说明：
+
+- 在暂停菜单中添加“速度”按钮。
+- 按钮会在 `1x -> 2x -> 3x -> 4x -> 1x` 之间循环切换。
+- 使用 Godot 全局 `Engine.TimeScale` 调整本机游戏速度。
+- 会把上次选择的速度保存到独立配置文件，下次启动游戏时自动恢复。
+- 多人模式中也会显示按钮，但倍率只影响本机体验，不会同步给其他玩家。
+
 ### Card Effect Tweaks
 
 - 安装目录：`mods/card_effect_tweaks`
@@ -47,7 +61,7 @@
 推荐使用 Release 里的压缩包安装：
 
 1. 打开本仓库的 GitHub Release 页面。
-2. 下载 `STS2mods-v1.0.12.zip`。
+2. 下载 `STS2mods-v1.0.13.zip`。
 3. 解压压缩包。
 4. 把解压出来的 `mods` 文件夹复制到《杀戮尖塔 2》的游戏目录下。
 
@@ -65,6 +79,9 @@ Slay the Spire 2/
     pause_menu_rerun/
       manifest.json
       pause_menu_rerun.dll
+    game_speed_control/
+      manifest.json
+      game_speed_control.dll
 ```
 
 如果你是直接 clone 本仓库，也可以直接把仓库里的 `mods/` 文件夹复制到游戏目录。
@@ -92,6 +109,19 @@ dotnet build -c Release --no-restore
 ```powershell
 cd "mod_src\pause_menu_rerun"
 dotnet build -c Release --no-restore
+```
+
+编译 `game_speed_control`：
+
+```powershell
+cd "mod_src\game_speed_control"
+dotnet build -c Release --no-restore
+```
+
+运行 `game_speed_control` 的核心逻辑测试：
+
+```powershell
+dotnet run --project "mod_src\game_speed_control\tests\GameSpeedControl.Tests.csproj"
 ```
 
 编译完成后，把生成的 DLL 从：
