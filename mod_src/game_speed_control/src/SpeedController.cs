@@ -4,46 +4,67 @@ namespace GameSpeedControl;
 
 internal static class SpeedController
 {
-	private static double _currentSpeed = 1.0;
+	private static readonly CombatSpeedState State = new();
+
 	private static string? _settingsPath;
 
-	public static double CurrentSpeed => _currentSpeed;
+	public static double CurrentSpeed => State.TargetSpeed;
 
 	public static void LoadAndApply()
 	{
 		SpeedSettings settings = SpeedSettingsStore.Load(GetSettingsPath());
-		Apply(settings.SpeedMultiplier, persist: false);
+		ApplyTargetSpeed(settings.SpeedMultiplier, persist: false);
 	}
 
 	public static double Cycle()
 	{
-		double nextSpeed = SpeedPresetCycle.Next(_currentSpeed);
-		Apply(nextSpeed, persist: true);
-		return _currentSpeed;
+		double targetSpeed = State.CycleTargetSpeed();
+		ApplyEffectiveSpeed();
+		PersistTargetSpeed();
+		return targetSpeed;
 	}
 
-	public static void Apply(double speed, bool persist)
+	public static void EnterCombat()
 	{
-		_currentSpeed = SpeedPresetCycle.Normalize(speed);
-		Engine.TimeScale = _currentSpeed;
+		State.EnterCombat();
+		ApplyEffectiveSpeed();
+	}
 
-		if (!persist)
+	public static void ExitCombat()
+	{
+		State.ExitCombat();
+		ApplyEffectiveSpeed();
+	}
+
+	private static void ApplyTargetSpeed(double speed, bool persist)
+	{
+		State.LoadTargetSpeed(speed);
+		ApplyEffectiveSpeed();
+		if (persist)
 		{
-			return;
+			PersistTargetSpeed();
 		}
+	}
 
+	private static void PersistTargetSpeed()
+	{
 		try
 		{
 			SpeedSettingsStore.Save(GetSettingsPath(), new SpeedSettings
 			{
 				SchemaVersion = 1,
-				SpeedMultiplier = _currentSpeed
+				SpeedMultiplier = State.TargetSpeed
 			});
 		}
 		catch
 		{
 			// Failing to persist a quality-of-life setting should not break the game.
 		}
+	}
+
+	private static void ApplyEffectiveSpeed()
+	{
+		Engine.TimeScale = State.EffectiveSpeed;
 	}
 
 	private static string GetSettingsPath()

@@ -46,6 +46,32 @@ try
 	AssertEqual(1, loaded.SchemaVersion, "Schema version should round-trip.");
 	AssertEqual(4.0, loaded.SpeedMultiplier, "Saved speed should round-trip.");
 	AssertTrue(File.Exists(validPath), "Settings file should be written.");
+
+	CombatSpeedState state = new CombatSpeedState();
+	state.LoadTargetSpeed(3.0);
+	AssertEqual(3.0, state.TargetSpeed, "Loaded target speed should be remembered.");
+	AssertEqual(1.0, state.EffectiveSpeed, "Loaded speed should not apply outside combat.");
+
+	state.EnterCombat();
+	AssertEqual(3.0, state.EffectiveSpeed, "Entering combat should apply the remembered target speed.");
+
+	state.CycleTargetSpeed();
+	AssertEqual(4.0, state.TargetSpeed, "Cycling during combat should update target speed.");
+	AssertEqual(4.0, state.EffectiveSpeed, "Cycling during combat should immediately update effective speed.");
+
+	state.ExitCombat();
+	AssertEqual(1.0, state.EffectiveSpeed, "Leaving combat should restore normal speed.");
+
+	state.CycleTargetSpeed();
+	AssertEqual(1.0, state.TargetSpeed, "Cycling after 4x outside combat should wrap target speed to 1x.");
+	AssertEqual(1.0, state.EffectiveSpeed, "Cycling outside combat should not speed up global time.");
+
+	state.CycleTargetSpeed();
+	AssertEqual(2.0, state.TargetSpeed, "Cycling outside combat should still update the next combat target speed.");
+	AssertEqual(1.0, state.EffectiveSpeed, "Outside combat should continue to use 1x even after choosing 2x.");
+
+	state.EnterCombat();
+	AssertEqual(2.0, state.EffectiveSpeed, "Next combat should use the target selected outside combat.");
 }
 finally
 {

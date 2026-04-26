@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\src\CombatSpeedState.cs" Link="CombatSpeedState.cs" />
     <Compile Include="..\src\SpeedPresetCycle.cs" Link="SpeedPresetCycle.cs" />
     <Compile Include="..\src\SpeedSettings.cs" Link="SpeedSettings.cs" />
     <Compile Include="..\src\SpeedSettingsStore.cs" Link="SpeedSettingsStore.cs" />

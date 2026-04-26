@@ -1,4 +1,5 @@
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Modding;
 
 namespace GameSpeedControl;
@@ -20,5 +21,7 @@ public static class ModEntry
 		SpeedController.LoadAndApply();
 		_harmony = new Harmony("codex.game_speed_control");
 		_harmony.PatchAll(typeof(ModEntry).Assembly);
+		CombatManager.Instance.CombatSetUp += _ => SpeedController.EnterCombat();
+		CombatManager.Instance.CombatEnded += _ => SpeedController.ExitCombat();
 	}
 }
