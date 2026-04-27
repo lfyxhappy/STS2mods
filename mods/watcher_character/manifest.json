@@ -3,7 +3,7 @@
   "id": "Watcher",
   "name": "Watcher",
   "author": "良风有幸(Mr.Huang)",
-  "description": "为《杀戮尖塔 2》加入观者角色，包含角色逻辑和资源包。本 mod 为非官方社区作品，与 MegaCrit 无关；部分美术素材来源于《杀戮尖塔》初代，版权归 MegaCrit 所有；不保证与其他 mod 或未来版本兼容，使用前请自行备份存档。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
+  "description": "加入一代观者角色",
   "version": "0.5.7",
   "has_pck": true,
   "has_dll": true,
