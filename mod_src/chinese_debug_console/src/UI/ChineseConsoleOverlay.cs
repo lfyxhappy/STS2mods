@@ -192,7 +192,7 @@ internal sealed class ChineseConsoleOverlay : Control
 		row.AddChild(CreateModeButton("添加遗物", PickerMode.AddRelic));
 		row.AddChild(CreateModeButton("移除遗物", PickerMode.RemoveRelic));
 
-		Label hint = CreateLabel("快捷键：` / ~ / ' 呼出或关闭", 16, MutedTextColor);
+		Label hint = CreateLabel("快捷键：F10 呼出或关闭", 16, MutedTextColor);
 		hint.SizeFlagsHorizontal = SizeFlags.ExpandFill;
 		hint.HorizontalAlignment = HorizontalAlignment.Right;
 		row.AddChild(hint);
@@ -440,9 +440,7 @@ internal sealed class ChineseConsoleOverlay : Control
 
 	private static bool IsToggleKey(InputEventKey key)
 	{
-		return key.Keycode is Key.Quoteleft or Key.Apostrophe or Key.Asciicircum or Key.Asterisk
-			|| key.PhysicalKeycode is Key.Quoteleft or Key.Apostrophe
-			|| (key.ShiftPressed && key.Keycode == Key.Key8);
+		return key.Keycode == Key.F10 || key.PhysicalKeycode == Key.F10;
 	}
 
 	private static Label CreateLabel(string text, int fontSize, Color color)
