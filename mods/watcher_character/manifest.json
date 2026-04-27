@@ -1,0 +1,11 @@
+{
+  "pck_name": "Watcher",
+  "id": "Watcher",
+  "name": "Watcher",
+  "author": "Boninall",
+  "description": "Adds the Watcher character to Slay the Spire 2. This is an unofficial community mod, unaffiliated with MegaCrit. Some art assets are from the original Slay the Spire, copyright MegaCrit. Compatibility with other mods or future versions is not guaranteed; save data may be affected.\n\n为《杀戮尖塔2》加入观者角色。本 mod 为非官方社区作品，与 MegaCrit 无关；部分美术素材来源于《杀戮尖塔》初代，其版权归 MegaCrit 所有；不保证与其他 mod 或未来版本的兼容性，使用后可能影响存档数据。",
+  "version": "0.5.7",
+  "has_pck": true,
+  "has_dll": true,
+  "affects_gameplay": true
+}

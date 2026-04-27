@@ -2,8 +2,8 @@
   "id": "game_speed_control",
   "name": "Game Speed Control",
   "author": "Codex",
-  "description": "Adds a pause-menu speed button that cycles local combat speed through 1x, 2x, 3x, and 4x.",
-  "version": "1.0.1",
+  "description": "Adds a pause-menu speed button that cycles local combat speed from 1x to 4x in 0.5x steps.",
+  "version": "1.0.2",
   "has_dll": true,
   "has_pck": false,
   "affects_gameplay": false

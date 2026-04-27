@@ -4,7 +4,7 @@ namespace GameSpeedControl;
 
 internal static class SpeedPresetCycle
 {
-	public static readonly double[] Presets = [1.0, 2.0, 3.0, 4.0];
+	public static readonly double[] Presets = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0];
 
 	public static double Normalize(double value)
 	{
