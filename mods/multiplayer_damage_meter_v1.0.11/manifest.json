@@ -1,8 +1,8 @@
 {
   "id": "multiplayer_damage_meter",
   "name": "多人伤害统计",
-  "author": "Codex",
-  "description": "多人模式伤害统计，计入被格挡伤害。",
+  "author": "良风有幸(Mr.Huang)",
+  "description": "多人模式伤害统计工具，会统计玩家造成的伤害，并计入被格挡伤害。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
   "version": "1.0.11",
   "has_dll": true,
   "has_pck": false,

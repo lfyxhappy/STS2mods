@@ -1,8 +1,8 @@
 {
   "id": "card_effect_tweaks",
   "name": "Card Effect Tweaks",
-  "author": "Codex",
-  "description": "Framework for standalone card effect Harmony patches. The initial build ships no active card changes.",
+  "author": "良风有幸(Mr.Huang)",
+  "description": "独立卡牌效果修改框架，用于编写 Harmony 补丁。当前版本只提供框架和模板，不启用实际卡牌改动。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
   "version": "0.1.0",
   "has_dll": true,
   "has_pck": false,

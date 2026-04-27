@@ -1,8 +1,8 @@
 {
   "id": "pause_menu_rerun",
   "name": "Pause Menu Rerun",
-  "author": "Codex",
-  "description": "Adds a green singleplayer pause-menu rerun button that saves, returns to the main menu, and immediately continues the saved run.",
+  "author": "良风有幸(Mr.Huang)",
+  "description": "在单人模式暂停菜单中添加绿色重开按钮，可保存当前进度、返回主菜单，并立即继续该存档以重新开始本局。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
   "version": "v1.0",
   "has_dll": true,
   "has_pck": false,

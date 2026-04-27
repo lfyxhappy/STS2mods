@@ -1,8 +1,8 @@
 {
   "id": "game_speed_control",
   "name": "Game Speed Control",
-  "author": "Codex",
-  "description": "Adds a pause-menu speed button that cycles local combat speed from 1x to 4x in 0.5x steps.",
+  "author": "良风有幸(Mr.Huang)",
+  "description": "在暂停菜单中添加速度按钮，可按 0.5x 间隔在 1x 到 4x 之间循环切换本机战斗速度。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
   "version": "1.0.2",
   "has_dll": true,
   "has_pck": false,

@@ -63,6 +63,18 @@
 - 本地目录名保持 `watcher_character`，但 manifest id 保持 `Watcher`，以兼容游戏 Mod loader 对 `Watcher.dll` / `Watcher.pck` 的加载规则。
 - `mod_src/watcher_character/decompiled_src` 中提供可编译的 ILSpy 反编译工程，方便后续继续修改和改进 DLL 逻辑。
 
+### 中文调试控制台
+
+- 安装目录：`mods/chinese_debug_console`
+- 源码目录：`mod_src/chinese_debug_console`
+- 当前版本：`0.1.0`
+
+功能说明：
+
+- 在游戏内添加中文覆盖层调试控制台。
+- 支持添加或移除当前牌组卡牌。
+- 支持添加或移除当前玩家遗物。
+
 ### Card Effect Tweaks
 
 - 安装目录：`mods/card_effect_tweaks`
@@ -96,6 +108,9 @@ Slay the Spire 2/
     game_speed_control/
       manifest.json
       game_speed_control.dll
+    chinese_debug_console/
+      manifest.json
+      chinese_debug_console.dll
     watcher_character/
       manifest.json
       Watcher.dll
@@ -133,6 +148,13 @@ dotnet build -c Release --no-restore
 
 ```powershell
 cd "mod_src\game_speed_control"
+dotnet build -c Release --no-restore
+```
+
+编译 `chinese_debug_console`：
+
+```powershell
+cd "mod_src\chinese_debug_console"
 dotnet build -c Release --no-restore
 ```
 

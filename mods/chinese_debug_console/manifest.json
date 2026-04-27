@@ -1,0 +1,10 @@
+{
+  "id": "chinese_debug_console",
+  "name": "中文调试控制台",
+  "author": "良风有幸(Mr.Huang)",
+  "description": "中文覆盖层调试控制台，支持在游戏内添加或移除当前牌组卡牌，也可以添加或移除当前玩家遗物。\n\n详情见我的github仓库https://github.com/lfyxhappy/STS2mods",
+  "version": "0.1.0",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": true
+}
